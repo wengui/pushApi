@@ -7,6 +7,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.push.constant.CodeConstant;
 import com.push.dao.writedao.NanoCheckerRefWriteMapper;
 import com.push.pushApi.action.ApiBaseAction;
 
@@ -43,12 +44,12 @@ public class UpdateCheckerRefAllAction extends ApiBaseAction {
 		BeanUtils.populate(param, request.getParameterMap());
 
 		// 更新第一条记录的最大值
-		nanoCheckerRefWriteMapper.updateByMaxValue(param.getItemName(), param.getMin(), "0", param.getAge());
+		nanoCheckerRefWriteMapper.updateByMaxValue(param.getItemName(), param.getMin(), CodeConstant.RECORD_MIN, param.getAge());
 		 
 		// 更新最小值最大值
-		nanoCheckerRefWriteMapper.updateByMaxAndMinValue(param.getItemName(), param.getMax(), param.getMin(), "1", param.getAge());
+		nanoCheckerRefWriteMapper.updateByMaxAndMinValue(param.getItemName(), param.getMax(), param.getMin(), CodeConstant.RECORD_MAX_MIN, param.getAge());
 		 // 更新第二条记录的最小值
-		nanoCheckerRefWriteMapper.updateByMinValue(param.getItemName(), param.getMax(),"2",param.getAge());
+		nanoCheckerRefWriteMapper.updateByMinValue(param.getItemName(), param.getMax(),CodeConstant.RECORD_MAX,param.getAge());
 
 		// 将java对象转成json对象
 		CheckerRefOutputBean out = new CheckerRefOutputBean();
