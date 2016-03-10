@@ -16,7 +16,7 @@ import com.push.dao.readdao.NanoCheckerRefReadMapper;
 import com.push.pushApi.action.ApiBaseAction;
 
 import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
+
 import net.sf.json.JsonConfig;
 import net.sf.json.util.CycleDetectionStrategy;
 
@@ -33,7 +33,7 @@ public class reportAction extends ApiBaseAction {
 	// 前台对应的参数bean
 	private ReportInputBean param = new ReportInputBean();
 
-	private String result;
+	private JSONArray result;
 
 	public String doExec() throws Exception {
 		// 处理跨域请求问题
@@ -63,18 +63,18 @@ public class reportAction extends ApiBaseAction {
 		JsonConfig jsonConfig = new JsonConfig();
 		jsonConfig.setCycleDetectionStrategy(CycleDetectionStrategy.LENIENT);
 
-		result = JSONArray.fromObject(nanoCheckerReportList, jsonConfig).toString();
+		result = JSONArray.fromObject(nanoCheckerReportList, jsonConfig);
 
 	
 
 		return SUCCESS;
 	}
 
-	public String getResult() {
+	public JSONArray getResult() {
 		return result;
 	}
 
-	public void setResult(String result) {
+	public void setResult(JSONArray result) {
 		this.result = result;
 	}
 }
