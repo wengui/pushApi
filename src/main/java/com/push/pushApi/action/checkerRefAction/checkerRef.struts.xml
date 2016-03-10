@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	
+	<package name="checkerRef" extends="struts-api-base" namespace="/checkerRefAction">
+
+		<action name="checkerRef" class="com.push.pushApi.action.checkerRefAction.CheckerRefAction" method="doExec">
+			<result type="json"></result> 
+		</action>
+		
+		<action name="updateRef" class="com.push.pushApi.action.checkerRefAction.UpdateCheckerRefAction" method="doExec">
+			<result type="json"></result> 
+		</action>
+		
+		<action name="updateRefAll" class="com.push.pushApi.action.checkerRefAction.UpdateCheckerRefAllAction" method="doExec">
+			<result type="json"></result> 
+		</action>
+		
+	</package>
+</struts>
