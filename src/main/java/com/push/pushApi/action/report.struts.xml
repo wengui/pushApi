@@ -11,5 +11,9 @@
 		<action name="reportResult" class="com.push.pushApi.action.reportAction" method="doExec">
 			<result type="json"></result> 
 		</action>
+		
+		<action name="reportResultHistory" class="com.push.pushApi.action.reportAction" method="doExecHistory">
+			<result type="json"></result> 
+		</action>
 	</package>
 </struts>
