@@ -8,7 +8,7 @@
 	<display-name>com_pushApi</display-name>
     <context-param>  
         <param-name>webAppRootKey</param-name>  
-        <param-value>com_pushApi.root</param-value>  
+        <param-value>pushApi.root</param-value>  
     </context-param> 
 
   
